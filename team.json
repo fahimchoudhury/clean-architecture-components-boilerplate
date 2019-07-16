@@ -1,0 +1,40 @@
+{
+  "team": [
+    {
+      "id": 1123581321,
+      "name": "John Snow",
+      "title": "Lord Commander",
+      "avatar": "https://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 1123581321,
+      "name": "Arya Stark",
+      "title": "No one",
+      "avatar": "https://placeimg.com/640/480/tech"
+    },
+    {
+      "id": 1123581321,
+      "name": "Sansa Stark",
+      "title": "Lady of Winterfell",
+      "avatar": "https://placeimg.com/640/480/sports"
+    },
+    {
+      "id": 1123581321,
+      "name": "Tyrion Lannister",
+      "title": "Hand of the King",
+      "avatar": "https://placeimg.com/640/480/any"
+    },
+    {
+      "id": 1123581321,
+      "name": "Brnadon Stark",
+      "title": "Bran the Builder",
+      "avatar": "https://placeimg.com/640/480/science"
+    },
+    {
+      "id": 1123581321,
+      "name": "Ghost",
+      "title": "Direwolf",
+      "avatar": "https://placeimg.com/640/480/book"
+    }
+  ]
+}

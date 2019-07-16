@@ -24,7 +24,7 @@ abstract class RemoteModule {
         @Provides
         @JvmStatic
         fun provideBufferooService(): BufferooService {
-            return BufferooServiceFactory.makeBuffeoorService(BuildConfig.DEBUG)
+            return BufferooServiceFactory.makeBufferooService(BuildConfig.DEBUG)
         }
     }
 

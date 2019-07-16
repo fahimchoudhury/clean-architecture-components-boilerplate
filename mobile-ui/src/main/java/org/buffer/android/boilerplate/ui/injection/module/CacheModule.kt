@@ -26,9 +26,10 @@ abstract class CacheModule {
         @JvmStatic
         fun provideBufferoosDatabase(application: Application): BufferoosDatabase {
             return Room.databaseBuilder(
-                    application.applicationContext,
-                    BufferoosDatabase::class.java, "bufferoos.db")
-                    .build()
+                application.applicationContext,
+                BufferoosDatabase::class.java, "bufferoos.db"
+            )
+                .build()
         }
     }
 

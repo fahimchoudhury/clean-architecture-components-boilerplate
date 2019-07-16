@@ -13,11 +13,12 @@ import org.buffer.android.boilerplate.presentation.model.BufferooView
 import javax.inject.Inject
 
 open class BrowseBufferoosViewModel @Inject internal constructor(
-        private val getBufferoos: GetBufferoos,
-        private val bufferooMapper: BufferooMapper) : ViewModel() {
+    private val getBufferoos: GetBufferoos,
+    private val bufferooMapper: BufferooMapper
+) : ViewModel() {
 
     private val bufferoosLiveData: MutableLiveData<Resource<List<BufferooView>>> =
-            MutableLiveData()
+        MutableLiveData()
 
     init {
         fetchBufferoos()
@@ -37,13 +38,17 @@ open class BrowseBufferoosViewModel @Inject internal constructor(
         return getBufferoos.execute(BufferooSubscriber())
     }
 
-    inner class BufferooSubscriber: DisposableSubscriber<List<Bufferoo>>() {
+    inner class BufferooSubscriber : DisposableSubscriber<List<Bufferoo>>() {
 
-        override fun onComplete() { }
+        override fun onComplete() {}
 
         override fun onNext(t: List<Bufferoo>) {
-            bufferoosLiveData.postValue(Resource(ResourceState.SUCCESS,
-                    t.map { bufferooMapper.mapToView(it) }, null))
+            bufferoosLiveData.postValue(
+                Resource(
+                    ResourceState.SUCCESS,
+                    t.map { bufferooMapper.mapToView(it) }, null
+                )
+            )
         }
 
         override fun onError(exception: Throwable) {

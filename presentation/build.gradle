@@ -54,13 +54,13 @@ dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
     def presentationTestDependencies = rootProject.ext.presentationTestDependencies
 
-    compile presentationDependencies.javaxAnnotation
+    implementation presentationDependencies.javaxAnnotation
 
-    compile presentationDependencies.kotlin
-    compile presentationDependencies.javaxInject
-    compile presentationDependencies.rxKotlin
-    compile presentationDependencies.archRuntime
-    compile presentationDependencies.archExtensions
+    implementation presentationDependencies.kotlin
+    implementation presentationDependencies.javaxInject
+    implementation presentationDependencies.rxKotlin
+    implementation presentationDependencies.archRuntime
+    implementation presentationDependencies.archExtensions
     kapt presentationDependencies.archCompiler
 
     testImplementation presentationTestDependencies.junit
@@ -69,5 +69,5 @@ dependencies {
     testImplementation presentationTestDependencies.robolectric
     testImplementation "android.arch.core:core-testing:1.0.0-alpha9-1"
 
-    compile project(':domain')
+    implementation project(':domain')
 }

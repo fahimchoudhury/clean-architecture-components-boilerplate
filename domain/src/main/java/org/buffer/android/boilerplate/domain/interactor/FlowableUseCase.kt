@@ -10,13 +10,13 @@ import org.buffer.android.boilerplate.domain.executor.PostExecutionThread
 import org.buffer.android.boilerplate.domain.executor.ThreadExecutor
 
 
-
 /**
  * Abstract class for a UseCase that returns an instance of a [Single].
  */
 abstract class FlowableUseCase<T, in Params> constructor(
-        private val threadExecutor: ThreadExecutor,
-        private val postExecutionThread: PostExecutionThread) {
+    private val threadExecutor: ThreadExecutor,
+    private val postExecutionThread: PostExecutionThread
+) {
 
     private val disposables = CompositeDisposable()
 
@@ -30,8 +30,8 @@ abstract class FlowableUseCase<T, in Params> constructor(
      */
     open fun execute(observer: DisposableSubscriber<T>, params: Params? = null) {
         val observable = this.buildUseCaseObservable(params)
-                .subscribeOn(Schedulers.from(threadExecutor))
-                .observeOn(postExecutionThread.scheduler) as Flowable<T>
+            .subscribeOn(Schedulers.from(threadExecutor))
+            .observeOn(postExecutionThread.scheduler) as Flowable<T>
         addDisposable(observable.subscribeWith(observer))
     }
 
